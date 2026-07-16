@@ -205,44 +205,6 @@ function showInfo(){
 
 
 
-function showReport(){
-
-
-    let box =
-        document.getElementById(
-            "report"
-        );
-
-
-    box.innerHTML = "";
-
-
-
-    data.items.forEach(item => {
-
-
-
-        let div =
-            document.createElement(
-                "div"
-            );
-
-
-        div.className =
-            "report-item";
-
-
-
-        div.innerText =
-            item.text;
-
-
-
-        box.appendChild(div);
-
-
-
-    });
 
 
 }
@@ -268,7 +230,48 @@ function save(){
 
 }
 
+function showReport(){
 
+
+    let box =
+        document.getElementById(
+            "report"
+        );
+
+
+    box.innerHTML = "";
+
+
+
+    data.items.forEach(item => {
+
+
+        let div =
+            document.createElement(
+                "div"
+            );
+
+
+        div.className =
+            "report-item";
+
+
+        div.innerText =
+            item.text;
+
+
+        box.appendChild(div);
+
+
+    });
+
+
+
+    // автоматическая прокрутка вниз
+    box.scrollTop = box.scrollHeight;
+
+
+}
 
 
 
