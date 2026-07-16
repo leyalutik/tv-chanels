@@ -46,7 +46,7 @@ margin-bottom:10px;
 
 .channel-list{
 
-height:300px;
+height:40vh;
 
 overflow-y:auto;
 
@@ -55,6 +55,7 @@ background:white;
 border-radius:10px;
 
 padding:10px;
+
 
 }
 
@@ -112,6 +113,8 @@ height:45vh;
 
 overflow-y:auto;
 
+scroll-behavior:smooth;
+
 }
 
 
@@ -138,6 +141,8 @@ margin-top:15px;
 
 
 
+
+
 .buttons button{
 
 flex:1;
@@ -148,7 +153,7 @@ border:none;
 
 border-radius:10px;
 
-font-size:16px;
+font-size:18px;
 
 }
 
@@ -191,7 +196,10 @@ padding:25px;
 
 width:85%;
 
+box-sizing:border-box;
+
 border-radius:15px;
+
 
 }
 
@@ -222,5 +230,36 @@ margin-top:10px;
 border-radius:10px;
 
 border:none;
+
+}
+
+
+button{
+
+-webkit-tap-highlight-color:transparent;
+
+user-select:none;
+
+}
+
+
+function saveEmptyLine(){
+
+
+    data.items.push({
+
+        text:""
+
+    });
+
+
+    save();
+
+
+    showReport();
+
+
+    closeModal();
+
 
 }
