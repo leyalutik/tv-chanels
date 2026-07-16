@@ -10,7 +10,7 @@ items:[]
 
 
 
-let lastChannel = null;
+
 
 
 
@@ -75,14 +75,11 @@ if(data.items.length===0){
 let now=new Date();
 
 
-data.date=
-now.toLocaleDateString(
-"ru-RU"
-);
+data.date =
+now.toLocaleDateString("ru-RU");
 
 
-
-data.time=
+data.time =
 now.toLocaleTimeString(
 "ru-RU",
 {
@@ -98,15 +95,9 @@ minute:"2-digit"
 
 data.items.push({
 
-channel:channel,
-
-comment:""
+text: channel
 
 });
-
-
-
-lastChannel=data.items.length-1;
 
 
 save();
@@ -128,13 +119,15 @@ showReport();
 function addComment(){
 
 
-if(lastChannel===null){
+document.getElementById(
+"commentModal"
+).style.display="block";
 
-alert(
-"Сначала выберите канал"
-);
 
-return;
+document.getElementById(
+"commentText"
+).value="";
+
 
 }
 
@@ -160,14 +153,18 @@ document.getElementById(
 function saveComment(){
 
 
-let comment=document.getElementById(
+let comment =
+document.getElementById(
 "commentText"
-).value.trim();
+).value;
 
 
 
-data.items[lastChannel].comment =
-comment;
+data.items.push({
+
+text: comment
+
+});
 
 
 save();
@@ -236,50 +233,33 @@ box.innerHTML=
 
 
 
-
-
-
 function showReport(){
 
 
-let box=document.getElementById(
+let box =
+document.getElementById(
 "report"
 );
-
 
 
 box.innerHTML="";
 
 
-
 data.items.forEach(item=>{
 
 
-let div=document.createElement(
+let div =
+document.createElement(
 "div"
 );
 
 
+div.className =
+"report-item";
 
-div.className="report-item";
 
-
-
-div.innerHTML=
-`
-<b>${item.channel}</b>
-<br>
-
-${
-item.comment
-?
-"Комментарий: "+item.comment
-:
-""
-}
-
-`;
-
+div.innerHTML =
+item.text;
 
 
 box.appendChild(div);
@@ -289,6 +269,8 @@ box.appendChild(div);
 
 
 }
+
+
 
 
 
@@ -394,7 +376,7 @@ items:[]
 
 
 
-lastChannel=null;
+
 
 
 
