@@ -300,11 +300,9 @@ function copyReport(){
 
 let text=
 `
-Проверка ТВ
-
+Отчёт по ТВ
 Дата:
 ${data.date}
-
 Время:
 ${data.time}
 
