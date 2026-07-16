@@ -1,26 +1,22 @@
 let data = JSON.parse(
-localStorage.getItem("tvData")
+    localStorage.getItem("tvData")
 )
 ||
 {
-date:"",
-time:"",
-items:[]
+    date: "",
+    time: "",
+    items: []
 };
-
-
-
-
 
 
 
 function load(){
 
-createButtons();
+    createButtons();
 
-showInfo();
+    showInfo();
 
-showReport();
+    showReport();
 
 }
 
@@ -29,38 +25,32 @@ showReport();
 
 function createButtons(){
 
-
-let box=document.getElementById(
-"channels"
-);
+    let box = document.getElementById("channels");
 
 
-
-channels.forEach(channel=>{
-
-
-let button=document.createElement(
-"button"
-);
+    channels.forEach(channel => {
 
 
-button.innerText=channel;
+        let button = document.createElement("button");
 
 
-button.onclick=function(){
-
-addChannel(channel);
-
-};
+        button.innerText = channel;
 
 
-box.appendChild(button);
+        button.onclick = function(){
+
+            addChannel(channel);
+
+        };
 
 
-});
+        box.appendChild(button);
 
+
+    });
 
 }
+
 
 
 
@@ -69,43 +59,46 @@ box.appendChild(button);
 function addChannel(channel){
 
 
-if(data.items.length===0){
+    // создаем дату только при первом канале
+
+    if(data.items.length === 0){
 
 
-let now=new Date();
+        let now = new Date();
 
 
-data.date =
-now.toLocaleDateString("ru-RU");
+        data.date =
+            now.toLocaleDateString("ru-RU");
 
 
-data.time =
-now.toLocaleTimeString(
-"ru-RU",
-{
-hour:"2-digit",
-minute:"2-digit"
-}
-);
+        data.time =
+            now.toLocaleTimeString(
+                "ru-RU",
+                {
+                    hour:"2-digit",
+                    minute:"2-digit"
+                }
+            );
 
 
-}
+    }
 
 
 
-data.items.push({
+    data.items.push({
 
-text: channel
+        text: channel
 
-});
-
-
-save();
+    });
 
 
-showInfo();
 
-showReport();
+    save();
+
+
+    showInfo();
+
+    showReport();
 
 
 }
@@ -119,31 +112,18 @@ showReport();
 function addComment(){
 
 
-document.getElementById(
-"commentModal"
-).style.display="block";
+    document.getElementById(
+        "commentModal"
+    ).style.display = "block";
 
 
-document.getElementById(
-"commentText"
-).value="";
-
-
-}
-
-
-
-document.getElementById(
-"commentModal"
-).style.display="block";
-
-
-document.getElementById(
-"commentText"
-).value="";
+    document.getElementById(
+        "commentText"
+    ).value = "";
 
 
 }
+
 
 
 
@@ -153,30 +133,32 @@ document.getElementById(
 function saveComment(){
 
 
-let comment =
-document.getElementById(
-"commentText"
-).value;
+    let comment =
+        document.getElementById(
+            "commentText"
+        ).value;
 
 
 
-data.items.push({
+    data.items.push({
 
-text: comment
+        text: comment
 
-});
-
-
-save();
+    });
 
 
-showReport();
+
+    save();
 
 
-closeModal();
+    showReport();
+
+
+    closeModal();
 
 
 }
+
 
 
 
@@ -186,12 +168,13 @@ closeModal();
 function closeModal(){
 
 
-document.getElementById(
-"commentModal"
-).style.display="none";
+    document.getElementById(
+        "commentModal"
+    ).style.display = "none";
 
 
 }
+
 
 
 
@@ -201,34 +184,40 @@ document.getElementById(
 function showInfo(){
 
 
-let box=document.getElementById(
-"checkInfo"
-);
+    let box =
+        document.getElementById(
+            "checkInfo"
+        );
 
 
 
-if(data.items.length===0){
+    if(data.items.length === 0){
 
 
-box.innerHTML=
-"Проверка не начата";
+        box.innerHTML =
+            "Проверка не начата";
+
+
+    }
+
+    else{
+
+
+        box.innerHTML =
+        `
+        <b>Дата:</b> ${data.date}<br>
+        <b>Начало:</b> ${data.time}
+        `;
+
+
+    }
 
 
 }
 
-else{
 
 
-box.innerHTML=
-`
-<b>Дата:</b> ${data.date}<br>
-<b>Начало:</b> ${data.time}
-`;
 
-}
-
-
-}
 
 
 
@@ -236,40 +225,44 @@ box.innerHTML=
 function showReport(){
 
 
-let box =
-document.getElementById(
-"report"
-);
+    let box =
+        document.getElementById(
+            "report"
+        );
 
 
-box.innerHTML="";
+    box.innerHTML = "";
 
 
-data.items.forEach(item=>{
+
+    data.items.forEach(item => {
 
 
-let div =
-document.createElement(
-"div"
-);
+
+        let div =
+            document.createElement(
+                "div"
+            );
 
 
-div.className =
-"report-item";
+        div.className =
+            "report-item";
 
 
-div.innerHTML =
-item.text;
+
+        div.innerText =
+            item.text;
 
 
-box.appendChild(div);
+
+        box.appendChild(div);
 
 
-});
+
+    });
 
 
 }
-
 
 
 
@@ -281,13 +274,17 @@ box.appendChild(div);
 function save(){
 
 
-localStorage.setItem(
-"tvData",
-JSON.stringify(data)
-);
+    localStorage.setItem(
+
+        "tvData",
+
+        JSON.stringify(data)
+
+    );
 
 
 }
+
 
 
 
@@ -298,56 +295,42 @@ JSON.stringify(data)
 function copyReport(){
 
 
-let text=
+    let text =
+
 `
 Отчёт по ТВ
+
 Дата:
 ${data.date}
+
 Время:
 ${data.time}
-
 
 `;
 
 
 
-data.items.forEach(item=>{
+    data.items.forEach(item => {
 
 
-text += item.channel;
+        text += item.text + "\n";
 
 
-
-if(item.comment){
-
-
-text +=
-" — "
-+
-item.comment;
-
-
-}
+    });
 
 
 
-text += "\n";
-
-
-});
+    navigator.clipboard.writeText(text);
 
 
 
-navigator.clipboard.writeText(text);
-
-
-
-alert(
-"Отчет скопирован"
-);
+    alert(
+        "Отчет скопирован"
+    );
 
 
 }
+
 
 
 
@@ -359,38 +342,34 @@ function clearReport(){
 
 
 
-if(confirm(
-"Очистить список?"
-)){
+    if(confirm(
+        "Очистить список?"
+    )){
 
 
-data={
+        data = {
 
-date:"",
-time:"",
-items:[]
+            date:"",
+            time:"",
+            items:[]
 
-};
-
-
-
+        };
 
 
 
-
-save();
-
-
-showInfo();
-
-showReport();
+        save();
 
 
-}
+        showInfo();
 
+        showReport();
+
+
+    }
 
 
 }
+
 
 
 
