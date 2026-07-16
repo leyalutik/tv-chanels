@@ -256,7 +256,7 @@ function copyReport(){
         }
 
 
-        text += "\n\n";
+        text += "\n";
 
 
     });
