@@ -1,304 +1,157 @@
-// список каналов
-
 const channels = [
 
-    "Первый",
-    "Россия 1",
-    "Россия 24",
-    "НТВ",
-    "СТС",
-    "ТНТ",
-    "РЕН ТВ",
-    "ТВ3",
-    "Домашний"
+"Авто Плюс",
+"Бобер",
+"В гостях у сказки",
+"Время",
+"Дикая охота HD",
+"Дикая рыбалка HD",
+"Дом кино",
+"Дом кино Премиум HD",
+"Дорама",
+"ЕГЭ",
+"Еврокино",
+"Женский журнал",
+"Живая планета",
+"Живи",
+"Загородная жизнь",
+"Звезда",
+"Звезда Плюс",
+"Звезда Плюс HD",
+"Иллюзион +",
+"Индийское кино",
+"Карусель",
+"Кинеко HD",
+"Кинокомедия",
+"Киномикс",
+"Киномикс HD",
+"Кинопремьера",
+"Киносемья",
+"Киносерия",
+"Киносерия HD",
+"Киносвидание",
+"Кино ТВ",
+"Кино ТВ HD",
+"Киноужас",
+"Кинохит",
+"Конгресс ТВ HD",
+"Красная линия",
+"Кухня ТВ",
+"ЛДПР ТВ",
+"ЛенТВ24 HD",
+"Мама",
+"Матч",
+"Матч! Арена HD",
+"Матч! Боец",
+"Матч! Страна",
+"Матч Премьер",
+"Матч Премьер HD",
+"Матч ТВ HD",
+"Мир",
+"Мир 24 HD",
+"Мосфильм",
+"Мосфильм HD",
+"Моя Планета",
+"Мульт",
+"Мультиландия",
+"Музыка Первого",
+"Мужское Кино",
+"Мужской",
+"Наука 2.0",
+"Наше новое кино",
+"Наше новое кино HD",
+"НСТ",
+"НТВ",
+"НТВ Право",
+"О!",
+"Оружие",
+"Первый",
+"Поехали!",
+"Психология 21",
+"Психология 22",
+"Рен ТВ",
+"Родное кино",
+"Россия 1",
+"Россия 24",
+"Россия HD",
+"Россия К",
+"Русская Ночь",
+"Русский бестселлер",
+"Русский детектив",
+"Русский иллюзион",
+"Русский роман",
+"Русский роман HD",
+"Санкт-Петербург",
+"Солнце",
+"Спас",
+"СТС",
+"СТС LOVE",
+"Союз",
+"Суббота",
+"СуперГерои",
+"ТВ3",
+"ТВЦ",
+"Театр HD",
+"Телеканал КХЛ",
+"Телекафе",
+"Теледом HD",
+"Техно 24",
+"ТНТ",
+"ТНТ4",
+"Чё",
+"Шопинг (Shopping Live)",
+"Ювелирочка",
+"2x2",
+"365 Дней",
+"A1 HD",
+"A2 HD",
+"Amedia Hit",
+"Amedia Hit HD",
+"Amedia Premium HD",
+"Big Planet HD",
+"Bobr",
+"Brazzers HD",
+"BRIDGE TV",
+"BRIDGE TV Classic",
+"BRIDGE TV Русский Хит",
+"Da Vinci Learning",
+"English Club HD",
+"Europa Plus TV",
+"Galaxy HD",
+"HD Life",
+"Hollywood HD",
+"LEOMAX24",
+"LIDE78 HD",
+"LIFE78",
+"Life 78 HD",
+"MAGNAT",
+"Plan B HD",
+"Private HD",
+"RTG HD",
+"RU.TV",
+"Russian Extreme HD",
+"Terra HD",
+"Trace Sport Stars HD",
+"UVI",
+"viju Explore",
+"viju Explore HD",
+"viju History",
+"viju History HD",
+"viju Nature",
+"viju Nature HD",
+"viju Sport",
+"viju TV1000",
+"viju TV1000 Action",
+"viju TV1000 Action HD",
+"viju TV1000 HD",
+"viju TV1000 русское",
+"viju TV1000 русское HD",
+"viju+ Comedy",
+"viju+ Megahit",
+"viju+ Planet",
+"viju+ Premiere",
+"viju+ Serial",
+"viju+ Sport",
+"Zoopарк HD"
 
 ];
-
-
-// выбранный канал
-
-let selectedChannel = "";
-
-
-// загрузка сохраненных данных
-
-let report = JSON.parse(
-    localStorage.getItem("tvReport")
-) || [];
-
-
-
-// создание кнопок
-
-function createChannels(){
-
-    const box =
-    document.getElementById("channels");
-
-
-    channels.forEach(channel=>{
-
-
-        let button =
-        document.createElement("button");
-
-
-        button.innerText = channel;
-
-
-        button.onclick = ()=>{
-
-            openComment(channel);
-
-        };
-
-
-        box.appendChild(button);
-
-
-    });
-
-}
-
-
-
-// открыть окно
-
-function openComment(channel){
-
-    selectedChannel = channel;
-
-
-    document.getElementById(
-        "modalTitle"
-    ).innerText =
-    channel;
-
-
-    document.getElementById(
-        "comment"
-    ).value="";
-
-
-    document.getElementById(
-        "modal"
-    ).style.display="block";
-
-
-}
-
-
-
-// сохранить с комментарием
-
-function saveChannel(){
-
-
-    let text =
-    document.getElementById(
-        "comment"
-    ).value.trim();
-
-
-
-    addToReport(
-        selectedChannel,
-        text
-    );
-
-
-    closeModal();
-
-}
-
-
-
-// пропустить комментарий
-
-function skipComment(){
-
-
-    addToReport(
-        selectedChannel,
-        ""
-    );
-
-
-    closeModal();
-
-}
-
-
-
-// добавить запись
-
-function addToReport(channel,comment){
-
-
-    report.push({
-
-        channel:channel,
-
-        comment:comment
-
-    });
-
-
-
-    save();
-
-
-    showReport();
-
-}
-
-
-
-// показать список
-
-function showReport(){
-
-
-    let box =
-    document.getElementById(
-        "report"
-    );
-
-
-    box.innerHTML="";
-
-
-    report.forEach(item=>{
-
-
-        let div =
-        document.createElement(
-            "div"
-        );
-
-
-        div.className="report-item";
-
-
-        div.innerHTML =
-        "<b>"
-        + item.channel
-        +"</b><br>"
-        +
-        (
-        item.comment
-        ?
-        "Комментарий: "
-        +item.comment
-        :
-        ""
-        );
-
-
-        box.appendChild(div);
-
-
-    });
-
-
-}
-
-
-
-// закрыть окно
-
-function closeModal(){
-
-    document.getElementById(
-        "modal"
-    ).style.display="none";
-
-}
-
-
-
-// сохранить
-
-function save(){
-
-    localStorage.setItem(
-
-        "tvReport",
-
-        JSON.stringify(report)
-
-    );
-
-}
-
-
-
-// копировать
-
-function copyReport(){
-
-
-    let text="";
-
-
-    report.forEach(item=>{
-
-
-        text += item.channel;
-
-
-        if(item.comment){
-
-            text +=
-            "\nКомментарий: "
-            +item.comment;
-
-        }
-
-
-        text += "\n";
-
-
-    });
-
-
-
-    navigator.clipboard.writeText(text);
-
-
-    alert(
-        "Скопировано"
-    );
-
-}
-
-
-
-// очистка
-
-function clearReport(){
-
-
-    if(
-        confirm(
-        "Очистить весь список?"
-        )
-    ){
-
-        report=[];
-
-        save();
-
-        showReport();
-
-    }
-
-}
-
-
-
-// запуск
-
-createChannels();
-
-showReport();
