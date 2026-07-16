@@ -1,0 +1,174 @@
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f2f2f2;
+
+    margin:0;
+
+}
+
+
+.container {
+
+    max-width:600px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+
+h1 {
+
+    text-align:center;
+
+}
+
+
+.channels {
+
+    display:grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+
+
+.channels button {
+
+    padding:15px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    border:none;
+
+    background:#ffffff;
+
+}
+
+
+
+.report {
+
+    background:white;
+
+    padding:15px;
+
+    min-height:150px;
+
+    border-radius:10px;
+
+}
+
+
+
+.report-item {
+
+    padding:10px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.buttons {
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+button {
+
+    cursor:pointer;
+
+}
+
+
+
+.buttons button {
+
+    flex:1;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:none;
+
+    font-size:16px;
+
+}
+
+
+.clear {
+
+    background:#ff7777;
+
+}
+
+
+
+/* окно */
+
+.modal {
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,0.5);
+
+}
+
+
+
+.modal-content {
+
+    background:white;
+
+    width:80%;
+
+    max-width:400px;
+
+    margin:30% auto;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+
+textarea {
+
+    width:100%;
+
+    height:80px;
+
+    margin-bottom:15px;
+
+    font-size:16px;
+
+}
