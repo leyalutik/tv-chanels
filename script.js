@@ -299,10 +299,8 @@ function copyReport(){
 
 `
 Отчёт по ТВ
-
 Дата:
 ${data.date}
-
 Время:
 ${data.time}
 
