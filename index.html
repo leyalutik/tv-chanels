@@ -1,84 +1,123 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Monitor</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TV Monitor</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <h1>📺 TV Monitor</h1>
 
-    <h2>Каналы</h2>
-
-    <div id="channels" class="channels">
-        <!-- кнопки создаются через JavaScript -->
-    </div>
+<h1>📺 TV Monitor</h1>
 
 
-    <h2>📋 Проверенные каналы</h2>
+<div id="checkInfo">
 
-    <div id="report" class="report">
-    </div>
-
-
-    <div class="buttons">
-
-        <button onclick="copyReport()">
-            📋 Копировать
-        </button>
+</div>
 
 
-        <button class="clear"
-                onclick="clearReport()">
-            🗑 Очистить
-        </button>
 
-    </div>
+<h2>Каналы</h2>
+
+
+<div id="channels" class="channel-list">
+
+</div>
+
+
+
+<button class="comment-btn"
+onclick="addComment()">
+
+📝 Добавить комментарий
+
+</button>
+
+
+
+<h2>📋 Проверка</h2>
+
+
+<div id="report">
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button onclick="copyReport()">
+
+📋 Копировать
+
+</button>
+
+
+
+<button class="clear"
+onclick="clearReport()">
+
+🗑 Очистить
+
+</button>
 
 
 </div>
 
 
-<!-- окно комментария -->
-
-<div id="modal" class="modal">
-
-    <div class="modal-content">
-
-        <h3 id="modalTitle">
-            Комментарий
-        </h3>
+</div>
 
 
-        <textarea id="comment"
-        placeholder="Введите комментарий"></textarea>
+
+<div id="commentModal" class="modal">
 
 
-        <div>
-
-            <button onclick="saveChannel()">
-                Добавить
-            </button>
+<div class="modal-box">
 
 
-            <button onclick="skipComment()">
-                Пропустить
-            </button>
+<h3>
+Комментарий
+</h3>
 
-        </div>
 
-    </div>
+<textarea id="commentText"
+placeholder="Введите комментарий">
+</textarea>
+
+
+<button onclick="saveComment()">
+Сохранить
+</button>
+
+
+<button onclick="closeModal()">
+Отмена
+</button>
+
 
 </div>
 
+
+</div>
+
+
+
+<script src="channels.js"></script>
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
