@@ -179,8 +179,6 @@ function closeModal(){
 
 
 
-
-
 function showInfo(){
 
 
@@ -190,27 +188,12 @@ function showInfo(){
         );
 
 
-
-    if(data.items.length === 0){
-
-
-        box.innerHTML =
-            "Проверка не начата";
-
-
-    }
-
-    else{
-
-
-        box.innerHTML =
-        `
-        <b>Дата:</b> ${data.date}<br>
-        <b>Начало:</b> ${data.time}
-        `;
-
-
-    }
+    box.innerHTML =
+    `
+    <b>Отчет по ТВ </b><br>
+    <b>Дата:</b> ${data.date || "-"}<br>
+    <b>Время:</b> ${data.time || "-"}
+    `;
 
 
 }
