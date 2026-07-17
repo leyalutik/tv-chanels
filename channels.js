@@ -141,7 +141,7 @@ const channels = [
 "Galaxy HD",
 "HD Life",
 "Hollywood HD",
-"Hustler HD"
+"Hustler HD",
 "LEOMAX24",
 "LIFE78",
 "LIFE78 HD",
