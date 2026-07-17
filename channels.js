@@ -176,7 +176,7 @@ const channels = [
 "viju+ Premiere",
 "viju+ Serial",
 "viju+ Sport HD",
-"Zoopаrk HD"
+"Zoopаrk HD",
 "Аналоговые",
   "Первый",
 "Россия 1",
