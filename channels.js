@@ -44,7 +44,6 @@ const channels = [
 "Кухня ТВ",
 "ЛДПР ТВ",
 "ЛенТВ24 HD",
-"Мама",
 "Матч",
 "Матч Премьер",
 "Матч Премьер HD",
@@ -177,6 +176,6 @@ const channels = [
 "viju+ Premiere",
 "viju+ Serial",
 "viju+ Sport HD",
-"Zoopарк HD"
+"Zoopаrk HD"
 
 ];
