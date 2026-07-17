@@ -159,7 +159,21 @@ function saveComment(){
 
 }
 
+function saveEmptyLine(){
 
+    data.items.push({
+
+        text: ""
+
+    });
+
+    save();
+
+    showReport();
+
+    closeModal();
+
+}
 
 
 
