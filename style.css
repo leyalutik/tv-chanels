@@ -1,143 +1,179 @@
+
 body{
 
-font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 
-background:#f2f2f2;
+    background:#f2f2f2;
 
-margin:0;
+    margin:0;
+
+    overflow:hidden;
 
 }
+
 
 
 
 .container{
 
-max-width:600px;
+    max-width:600px;
 
-margin:auto;
+    height:100vh;
 
-padding:15px;
+    margin:auto;
+
+    padding:8px;
+
+    box-sizing:border-box;
 
 }
 
 
+
+
+
+ю
 
 h1{
 
-text-align:center;
+    text-align:center;
+
+    font-size:22px;
+
+    margin:5px 0;
 
 }
+
 
 
 
 #checkInfo{
 
-background:white;
-
-padding:10px;
-
-border-radius:10px;
-
-margin-bottom:10px;
+    display:none;
 
 }
+
+
+
 
 
 
 .channel-list{
 
-height:40vh;
+    height:45vh;
 
-overflow-y:auto;
+    overflow-y:auto;
 
-background:white;
+    background:white;
 
-border-radius:10px;
+    border-radius:10px;
 
-padding:10px;
-
+    padding:5px;
 
 }
+
+
 
 
 
 .channel-list button{
 
-width:100%;
+    width:100%;
 
-padding:14px;
+    height:38px;
 
-margin-bottom:8px;
+    padding:5px;
 
-font-size:18px;
+    margin-bottom:5px;
 
-border-radius:10px;
+    font-size:16px;
 
-border:1px solid #ccc;
+    border-radius:8px;
 
-background:white;
+    border:1px solid #ccc;
+
+    background:white;
 
 }
+
+
 
 
 
 .comment-btn{
 
-width:100%;
+    width:100%;
 
-padding:15px;
+    height:44px;
 
-font-size:18px;
+    font-size:17px;
 
-margin-top:15px;
+    margin:8px 0;
 
-border-radius:10px;
+    border-radius:10px;
 
-border:none;
+    border:none;
 
-background:#ddd;
+    background:#ddd;
 
 }
+
+
 
 
 
 #report{
 
-background:white;
+    background:white;
 
-padding:10px;
+    padding:5px;
 
-border-radius:10px;
+    border-radius:10px;
 
-height:45vh;
+    height:33vh;
 
-overflow-y:auto;
+    overflow-y:auto;
 
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 
 }
+
+
+
 
 
 
 .report-item{
 
-padding:10px;
+    padding:7px 10px;
 
-border-bottom:1px solid #ddd;
+    min-height:18px;
+
+    font-size:15px;
+
+    line-height:1.2;
+
+    border-bottom:1px solid #ddd;
 
 }
+
+
+
+
 
 
 
 .buttons{
 
-display:flex;
+    display:flex;
 
-gap:10px;
+    gap:8px;
 
-margin-top:15px;
+    margin-top:8px;
 
 }
+
+
 
 
 
@@ -145,17 +181,21 @@ margin-top:15px;
 
 .buttons button{
 
-flex:1;
+    flex:1;
 
-padding:15px;
+    height:42px;
 
-border:none;
+    padding:5px;
 
-border-radius:10px;
+    border:none;
 
-font-size:18px;
+    border-radius:10px;
+
+    font-size:16px;
 
 }
+
+
 
 
 
@@ -234,13 +274,17 @@ border:none;
 }
 
 
+
+
 button{
 
--webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color:transparent;
 
-user-select:none;
+    user-select:none;
 
 }
+
+
 
 
 function saveEmptyLine(){
