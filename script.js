@@ -230,48 +230,49 @@ function save(){
 
 }
 
-function showReport(){
 
+
+function showReport(){
 
     let box =
         document.getElementById(
             "report"
         );
 
-
     box.innerHTML = "";
 
-
-
     data.items.forEach(item => {
-
 
         let div =
             document.createElement(
                 "div"
             );
 
-
         div.className =
             "report-item";
-
 
         div.innerText =
             item.text;
 
-
         box.appendChild(div);
-
 
     });
 
+    // Прокрутить к последней строке
+    let last = box.lastElementChild;
 
+    if(last){
 
-    // автоматическая прокрутка вниз
-    box.scrollTop = box.scrollHeight;
+        last.scrollIntoView({
+            behavior:"smooth",
+            block:"end"
+        });
 
+    }
 
 }
+
+
 
 
 
