@@ -122,11 +122,13 @@ h1{
 
 
 
-#report{
+
+
+ #report{
 
     background:white;
 
-    padding:5px;
+    padding:5px 5px 40px 5px;
 
     border-radius:10px;
 
@@ -137,6 +139,8 @@ h1{
     scroll-behavior:smooth;
 
 }
+
+
 
 
 
