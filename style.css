@@ -29,7 +29,7 @@ background:#cfe7ff;
 
 height:10vh;
 
-font-size:1.15rem;
+font-size:3rem;
 
 }
 
@@ -63,7 +63,7 @@ h1{
 
     text-align:center;
 
-    font-size:3%;
+    font-size:5%;
 
     margin:2%;
 
@@ -72,7 +72,7 @@ h1{
 
 h2 {
     text-align: center;
-    font-size: 2.5%;  /* ← размер шрифта в % */
+    font-size: 3%;  /* ← размер шрифта в % */
     margin: 0.2% 0 0 0;
 }
 
@@ -119,7 +119,7 @@ h2 {
 
     margin-bottom:1%;
 
-    font-size:2.5%;
+    font-size:3%;
 
     border-radius:1.5%;
 
@@ -139,7 +139,7 @@ h2 {
     border-radius: 2%;
     background: #ddd;
     color: black;
-    font-size: 2.5%;
+    font-size: 3%;
     cursor: pointer;
 }
 
@@ -155,7 +155,7 @@ h2 {
     border-radius: 2%;
     background: #ff7777;
     color: white;
-    font-size: 2.5%;
+    font-size: 3%;
     cursor: pointer;
 }
 
@@ -188,7 +188,7 @@ h2 {
 .report-item {
     padding: 1% 2%;
     min-height: 18px;
-    font-size: 2%;
+    font-size: 3%;
     line-height: 1.2;
     border-bottom: 1px solid #ddd;
 }
@@ -221,7 +221,7 @@ h2 {
     padding: 1%;
     border: none;
     border-radius: 2%;
-    font-size: 2%;
+    font-size: 3%;
 }
 
 
@@ -277,14 +277,14 @@ border-radius:3%;
 textarea {
     width: 100%;
     height: 150px;
-    font-size: 2.5%;
+    font-size: 3%;
     margin-bottom: 2%;
 }
 
 .modal-box button {
     width: 100%;
     padding: 3%;
-    font-size: 2.5%;
+    font-size: 3%;
     margin-top: 2%;
     border-radius: 2%;
     border: none;
