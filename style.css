@@ -38,7 +38,7 @@ body {
     max-width: 600px;
     height: 100vh;
     margin: auto;
-    padding: var(--padding-small) var(--padding-small) calc(env(safe-area-inset-bottom)) );
+    padding: var(--padding-small) var(--padding-small) var(--padding-small) var(--padding-left);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
