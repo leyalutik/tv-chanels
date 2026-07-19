@@ -1,19 +1,20 @@
 :root {
     /* Размеры шрифтов - В vh */
     --font-size-small: 2vh;
-    --font-size-medium: vh;
+    --font-size-medium: 2vh;
     --font-size-large: 2vh;
     --font-size-xl: 2vh;
     
     /* Высоты кнопок */
-    --btn-height-small: 2vh;
-    --btn-height-medium: 2vh;
-    --btn-height-large: 2vh;
+    --btn-height-small: 2.5vh;
+    --btn-height-medium: 2.5vh;
+    --btn-height-large: 2.5vh;
     
     /* Отступы */
     --padding-small: 0.5vh;
     --padding-medium: 1vh;
     --padding-large: 2vh;
+    --padding-left: 1vh;
     
     /* Цвета */
     --color-gray: #ddd;
@@ -37,7 +38,7 @@ body {
     max-width: 600px;
     height: 100vh;
     margin: auto;
-    padding: var(--padding-small) var(--padding-small) calc(2vh + env(safe-area-inset-bottom)) var(--padding-small);
+    padding: var(--padding-small) var(--padding-small) calc(env(safe-area-inset-bottom)) );
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -66,7 +67,7 @@ h2 {
     overflow-y: auto;
     background: white;
     border-radius: 2vh;
-    padding: var(--padding-small) var(--padding-small) var(--padding-small) 3vh;
+    padding: var(--padding-small) var(--padding-small) var(--padding-small) var(--padding-left);
     border: 0.3vh solid #ccc;
 }
 
@@ -74,7 +75,7 @@ h2 {
     width: 100%;
     height: var(--btn-height-medium);
     min-height: 30px;
-    padding: var(--padding-small) var(--padding-small) var(--padding-small) 4vh;
+    padding: var(--padding-small) var(--padding-small) var(--padding-small) var(--padding-left);
     margin-bottom: 1vh;
     font-size: var(--font-size-large);
     border-radius: 1.5vh;
