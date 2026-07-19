@@ -1,3 +1,5 @@
+let selectedIndex = -1;
+
 let data = JSON.parse(
     localStorage.getItem("tvData")
 )
@@ -60,15 +62,46 @@ function addChannel(channel){
 
 
     // создаем дату только при первом канале
+f(data.items.length===0){
 
-    if(data.items.length === 0){
+    let now=new Date();
 
+    data.items.push({
 
-        let now = new Date();
+        text:"Проверка каналов",
 
+        header:true
 
-        data.date =
-            now.toLocaleDateString("ru-RU");
+    });
+
+    data.items.push({
+
+        text:
+        "Дата: "
+        +
+        now.toLocaleDateString("ru-RU")
+        +
+        "   Время: "
+        +
+        now.toLocaleTimeString(
+            "ru-RU",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        ),
+
+        header:true
+
+    });
+
+    data.items.push({
+
+        text:"",
+
+        header:true
+
+    });
 
 
         data.time =
@@ -133,6 +166,48 @@ function addComment(){
 function saveComment(){
 
 
+    f(data.items.length===0){
+
+    let now=new Date();
+
+    data.items.push({
+
+        text:"Проверка каналов",
+
+        header:true
+
+    });
+
+    data.items.push({
+
+        text:
+        "Дата: "
+        +
+        now.toLocaleDateString("ru-RU")
+        +
+        "   Время: "
+        +
+        now.toLocaleTimeString(
+            "ru-RU",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        ),
+
+        header:true
+
+    });
+
+    data.items.push({
+
+        text:"",
+
+        header:true
+
+    });
+
+
     let comment =
         document.getElementById(
             "commentText"
@@ -140,11 +215,24 @@ function saveComment(){
 
 
 
+if(selectedIndex!=-1){
+
+    data.items[selectedIndex].text=
+    comment;
+
+    selectedIndex=-1;
+
+}
+else{
+
     data.items.push({
 
-        text: comment
+        text:comment
 
     });
+
+}
+
 
 
 
@@ -248,6 +336,8 @@ function save(){
 
 function showReport(){
 
+
+   
     let box =
         document.getElementById(
             "report"
@@ -255,7 +345,20 @@ function showReport(){
 
     box.innerHTML = "";
 
-    data.items.forEach(item => {
+    data.items.forEach((item,index)=>{
+
+          div.onclick = function(){
+
+    if(item.header){
+
+        return;
+
+    }
+
+    selectedIndex = index;
+
+    showReport();
+
 
         let div =
             document.createElement(
@@ -264,12 +367,17 @@ function showReport(){
 
         div.className =
             "report-item";
+              if(index===selectedIndex){
+
+    div.classList.add("selected");
+
+}
 
         div.innerText =
             item.text;
 
         box.appendChild(div);
-
+        box.scrollTop = box.scrollHeight;
     });
 
     // Прокрутить к последней строке
@@ -283,6 +391,79 @@ function showReport(){
         });
 
     }
+let btn=document.getElementById(
+"editDeleteBtn"
+);
+
+btn.disabled=
+selectedIndex==-1;
+}
+
+
+
+
+function showDeleteDialog(){
+
+    if(selectedIndex==-1){
+
+        return;
+
+    }
+
+    document.getElementById(
+    "deleteModal"
+    ).style.display="block";
+
+}
+
+
+
+function closeDeleteModal(){
+
+    document.getElementById(
+    "deleteModal"
+    ).style.display="none";
+
+}
+
+
+function deleteSelected(){
+
+    if(selectedIndex==-1){
+
+        return;
+
+    }
+
+    if(confirm("Удалить строку?")){
+
+        data.items.splice(selectedIndex,1);
+
+        selectedIndex=-1;
+
+        save();
+
+        showReport();
+
+        showInfo();
+
+    }
+
+    closeDeleteModal();
+
+}
+
+
+function editSelected(){
+
+    document.getElementById(
+    "commentText"
+    ).value=
+    data.items[selectedIndex].text;
+
+    closeDeleteModal();
+
+    addComment();
 
 }
 
@@ -292,6 +473,10 @@ function showReport(){
 
 
 
+    
+
+
+    
 
 function copyReport(){
 
