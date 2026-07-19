@@ -103,7 +103,8 @@ if(data.items.length===0){
 
     });
 
-
+    
+data.date = now.toLocaleDateString("ru-RU"); 
         data.time =
             now.toLocaleTimeString(
                 "ru-RU",
