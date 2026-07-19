@@ -38,7 +38,7 @@ font-size:3rem;
     max-width: 600px;
     height: 100vh;
     margin: auto;
-    padding: 1% 1% 4% 1%;  /* ← все отступы в % */
+    padding: 1% 1% calc(4% + env(safe-area-inset-bottom)) 1%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
