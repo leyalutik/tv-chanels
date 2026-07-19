@@ -5,12 +5,12 @@
     --font-size-large: 12%;
     --font-size-xl: 14%;
     
-    /* Высоты кнопок - увеличены в 2 раза */
-    --btn-height-small: 14vh;
-    --btn-height-medium: 16vh;
-    --btn-height-large: 18vh;
+    /* Высоты кнопок - УМЕНЬШЕНЫ В 2 РАЗА */
+    --btn-height-small: 3.5vh;   /* было 7vh */
+    --btn-height-medium: 4vh;    /* было 8vh */
+    --btn-height-large: 4.5vh;   /* было 9vh */
     
-    /* Отступы - увеличены в 2 раза */
+    /* Отступы */
     --padding-small: 2%;
     --padding-medium: 4%;
     --padding-large: 8%;
@@ -33,9 +33,9 @@ body {
     background: #cfe7ff;
 }
 
-/* Кнопки внизу */
+/* Кнопки внизу - УМЕНЬШЕНЫ В 2 РАЗА */
 .buttons button {
-    height: 10vh;
+    height: 5vh;  /* было 10vh */
     font-size: var(--font-size-medium);
 }
 
@@ -81,9 +81,10 @@ h2 {
     border: 2px solid #ccc;
 }
 
+/* КНОПКИ СПИСКА КАНАЛОВ - УВЕЛИЧЕНЫ В 1.5 РАЗА, ТЕКСТ ПО ЦЕНТРУ */
 .channel-list button {
     width: 100%;
-    height: 9%;
+    height: 13.5%;  /* было 9%, стало 13.5% (9% * 1.5) */
     min-height: 30px;
     padding: var(--padding-small) var(--padding-small) var(--padding-small) 4%;
     margin-bottom: 1%;
@@ -91,12 +92,12 @@ h2 {
     border-radius: 1.5%;
     border: 1px solid #ccc;
     background: white;
-    text-align: left;
+    text-align: center;  /* ← ТЕКСТ ПО ЦЕНТРУ */
 }
 
 .comment-btn {
     width: 100%;
-    height: var(--btn-height-medium);
+    height: var(--btn-height-medium);  /* ← УМЕНЬШЕНО */
     padding: var(--padding-small);
     border: none;
     border-radius: 2%;
@@ -112,7 +113,7 @@ h2 {
 
 .delete-btn {
     width: 100%;
-    height: var(--btn-height-medium);
+    height: var(--btn-height-medium);  /* ← УМЕНЬШЕНО */
     padding: var(--padding-small);
     border: none;
     border-radius: 2%;
@@ -156,7 +157,7 @@ h2 {
 
 .buttons button {
     flex: 1;
-    height: 9vh;
+    height: 5vh;  /* ← УМЕНЬШЕНО В 2 РАЗА */
     padding: var(--padding-small);
     border: none;
     border-radius: 2%;
