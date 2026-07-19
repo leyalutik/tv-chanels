@@ -63,7 +63,7 @@ h2 {
 }
 
 .channel-list {
-    height: 43vh;
+    height: 40vh;
     overflow-y: auto;
     background: white;
     border-radius: 2vh;
