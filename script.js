@@ -291,12 +291,6 @@ function showInfo(){
         );
 
 
-    box.innerHTML =
-    `
-    <b>Отчет по ТВ </b><br>
-    <b>Дата:</b> ${data.date || "-"}<br>
-    <b>Время:</b> ${data.time || "-"}
-    `;
 
 
 }
