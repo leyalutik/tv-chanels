@@ -87,7 +87,7 @@ h2 {
 .comment-btn {
     width: 100%;
     height: var(--btn-height-medium);
-    padding: var(--padding-small);
+    padding: 0;
     border: none;
     border-radius: 2vh;
     background: var(--color-gray);
