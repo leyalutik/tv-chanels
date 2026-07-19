@@ -44,6 +44,7 @@ body {
     height: 100vh;
     margin: auto;
     padding: 1% 1% calc(4% + env(safe-area-inset-bottom)) 1%;
+    font-size: var(--font-size-large--xl);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -95,7 +96,7 @@ h2 {
 
 .comment-btn {
     width: 100%;
-    height: var(--btn-height-medium);
+    height: font-size: var(--font-size-large););
     padding: var(--padding-small);
     border: none;
     border-radius: 2%;
