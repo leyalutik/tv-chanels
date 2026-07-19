@@ -18,7 +18,19 @@ background:#cfe7ff;
 }
 Увеличить кнопки
 
-.comment-btn,
+.comment-btn
+{
+
+height:7vh;
+
+font-size:1.2rem;
+
+margin-top:2vh;
+
+}
+
+
+
 .delete-btn{
 
 height:7vh;
@@ -39,8 +51,6 @@ height:7vh;
 font-size:1.15rem;
 
 }
-
-.comment-btn{ margin-top:2vh; }
 
 
 .container{
