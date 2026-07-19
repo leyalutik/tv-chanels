@@ -209,7 +209,7 @@ function saveComment(){
 
     });
 
-
+    }
    
 
 
@@ -232,7 +232,7 @@ else{
 
 }
 
-    }
+    
 
 
     save();
