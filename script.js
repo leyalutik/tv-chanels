@@ -62,7 +62,7 @@ function addChannel(channel){
 
 
     // создаем дату только при первом канале
-f(data.items.length===0){
+if(data.items.length===0){
 
     let now=new Date();
 
@@ -150,9 +150,7 @@ function addComment(){
     ).style.display = "block";
 
 
-    document.getElementById(
-        "commentText"
-    ).value = "";
+
 
 
 }
@@ -165,8 +163,12 @@ function addComment(){
 
 function saveComment(){
 
-
-    f(data.items.length===0){
+ let comment =
+        document.getElementById(
+            "commentText"
+        ).value;
+    
+    if(data.items.length===0){
 
     let now=new Date();
 
@@ -208,10 +210,7 @@ function saveComment(){
     });
 
 
-    let comment =
-        document.getElementById(
-            "commentText"
-        ).value;
+   
 
 
 
@@ -233,7 +232,7 @@ else{
 
 }
 
-
+    }
 
 
     save();
@@ -243,6 +242,7 @@ else{
 
 
     closeModal();
+
 
 
 }
@@ -303,21 +303,6 @@ function showInfo(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function save(){
 
 
@@ -337,6 +322,7 @@ function save(){
 function showReport(){
 
 
+
    
     let box =
         document.getElementById(
@@ -346,25 +332,18 @@ function showReport(){
     box.innerHTML = "";
 
     data.items.forEach((item,index)=>{
-
-          div.onclick = function(){
-
-    if(item.header){
-
-        return;
-
-    }
-
-    selectedIndex = index;
-
-    showReport();
-
-
         let div =
             document.createElement(
                 "div"
             );
-
+div.onclick = function(){
+    if(item.header){
+        return;
+    }
+    selectedIndex = index;
+    showReport();  // оставляем, если нужно обновить выделение
+};
+        
         div.className =
             "report-item";
               if(index===selectedIndex){
@@ -377,8 +356,8 @@ function showReport(){
             item.text;
 
         box.appendChild(div);
-        box.scrollTop = box.scrollHeight;
-    });
+      });
+    
 
     // Прокрутить к последней строке
     let last = box.lastElementChild;
