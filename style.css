@@ -1,200 +1,346 @@
 :root {
-    /* Размеры шрифтов - В vh */
-    --font-size-button: 8%;
-    --font-size-modal: 10%;
-    --font-size-channel: 8%;
-    --font-size-report: 4%;
-    
-    /* Высоты кнопок */
-    --btn-height-button: 25%;
-    --btn-height-modal: 30%;
-    --btn-height-channel: 10%;
-    --btn-height-report: 6%;
-    
-    /* Отступы */
-    --padding-proc: 1%;
-    --padding-vh: 0.5vh;
-    --padding-medium: 0%;
-    --padding-large: 0%;
-    --padding-left: 0%
-    
-    /* Цвета */
-    --color-gray: #ddd;
-    --color-gray-hover: #ccc;
+
+    /* ==========================
+       Шрифты
+       ========================== */
+
+    --font-size-title: 3vh;
+    --font-size-button: 2.4vh;
+    --font-size-channel: 2.2vh;
+    --font-size-report: 1.9vh;
+    --font-size-modal: 2.4vh;
+
+    /* ==========================
+       Высоты
+       ========================== */
+
+    --report-height: 23vh;
+
+    --btn-height-channel: 5vh;
+    --btn-height-button: 6vh;
+    --btn-height-report: 5vh;
+    --btn-height-modal: 6vh;
+
+    --textarea-height: 18vh;
+
+    /* ==========================
+       Размеры
+       ========================== */
+
+    --container-width: 600px;
+
+    /* ==========================
+       Отступы
+       ========================== */
+
+    --padding-small: .5vh;
+    --padding-medium: 1vh;
+    --padding-large: 2vh;
+
+    --gap-small: .3vh;
+    --gap-medium: .5vh;
+
+    /* ==========================
+       Скругления
+       ========================== */
+
+    --radius-small: 1vh;
+    --radius-medium: 1.5vh;
+    --radius-large: 2vh;
+    --radius-modal: 3vh;
+
+    /* ==========================
+       Границы
+       ========================== */
+
+    --border-thin: .2vh;
+    --border-medium: .3vh;
+
+    /* ==========================
+       Цвета
+       ========================== */
+
+    --color-background: #f2f2f2;
+    --color-white: #ffffff;
+
+    --color-border: #cccccc;
+
+    --color-selected: #cfe7ff;
+
+    --color-gray: #dddddd;
+    --color-gray-hover: #cccccc;
+
     --color-red: #ff7777;
     --color-red-hover: #ff5555;
+
+    --color-disabled: #cccccc;
+
+    --modal-overlay: rgba(0,0,0,.5);
+
+}
+/* =====================================
+   Общие стили
+===================================== */
+
+*{
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
-    overflow-y: auto;
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    margin:0;
+    padding:0;
+
+    overflow:hidden;
+
+    font-family:Arial,sans-serif;
+
+    background:var(--color-background);
+
 }
 
-.selected {
-    background: #cfe7ff;
+.selected{
+
+    background:var(--color-selected);
+
+}
+/* =====================================
+   Контейнер
+===================================== */
+
+.container{
+
+    width:100%;
+    max-width:var(--container-width);
+
+    height:100vh;
+
+    margin:0 auto;
+
+    padding:var(--padding-small);
+
+    display:flex;
+    flex-direction:column;
+
+    gap:var(--gap-small);
+
+    overflow:hidden;
+
+}
+/* =====================================
+   Заголовки
+===================================== */
+
+h1,
+h2{
+
+    margin:0;
+
+    text-align:center;
+
+    font-size:var(--font-size-title);
+
+    flex-shrink:0;
+
 }
 
-.container {
-    max-width: 600px;
-    height: 100vh;
-    margin: 0;
-    padding: 0.5vh; 
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2vh;
-    overflow-y: auto;
+#checkInfo{
+
+    display:none;
+
+}
+/* =====================================
+   Список каналов
+===================================== */
+
+.channel-list{
+
+    flex:1;
+
+    min-height:0;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    background:var(--color-white);
+
+    padding:var(--padding-medium);
+
+    border:var(--border-medium) solid var(--color-border);
+
+    border-radius:var(--radius-large);
+
+}
+.channel-list button{
+
+    width:100%;
+
+    height:var(--btn-height-channel);
+
+    margin-bottom:var(--gap-small);
+
+    border:var(--border-thin) solid var(--color-border);
+
+    border-radius:var(--radius-medium);
+
+    background:var(--color-white);
+
+    font-size:var(--font-size-channel);
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+.channel-list button:hover{
+
+    background:#f7f7f7;
+
 }
 
-h1 {
-    text-align: center;
-    font-size: var(--font-size-large);
-    margin: 0;
+.channel-list button:active{
+
+    background:#ececec;
+
 }
 
-h2 {
-    text-align: center;
-    font-size: var(--font-size-large);
-    
+/* =====================================
+   КНОПКИ
+===================================== */
+
+.comment-btn,
+.delete-btn{
+
+    width:100%;
+
+    height:var(--btn-height-button);
+
+    flex-shrink:0;
+
+    border:none;
+
+    border-radius:var(--radius-large);
+
+    font-size:var(--font-size-button);
+
+    cursor:pointer;
+
+    transition:.15s;
+
 }
 
-#checkInfo {
-    display: none;
+.comment-btn{
+
+    background:var(--color-gray);
+
+    color:#000;
+
 }
 
-.channel-list {
-    height: 47vh;
-    overflow-y: auto;
-    background: white;
-    border-radius: 2vh;
-    padding:var(--padding_proc);
-    border: 0.3vh solid #ccc;
+.comment-btn:hover{
+
+    background:var(--color-gray-hover);
+
 }
 
-.channel-list button {
-    width: 100%;
-    height: var(--btn-height-medium);
-    min-height: 30px
-    padding:;
-    margin-bottom: 0.1vh;
-    font-size: var(--font-size-channel);
-    border-radius: 1.5vh;
-    border: 0.2vh solid #ccc;
-    background: white;
-    text-align: center;
+.comment-btn:active{
+
+    background:#bfbfbf;
+
 }
 
-.comment-btn {
-    width: 100%;
-    height: var(--btn-height-button);
-    padding: 1%;
-    border: none;
-    border-radius: 2vh;
-    background: var(--color-gray);
-    color: black;
-    font-size: var(--font-size-button);
-    cursor: pointer;
+.delete-btn{
+
+    background:var(--color-red);
+
+    color:#fff;
+
 }
 
-.comment-btn:hover {
-    background: var(--color-gray-hover);
+.delete-btn:hover{
+
+    background:var(--color-red-hover);
+
 }
 
-.delete-btn {
-    width: 100%;
-    height: var(--btn-height-button);
-    padding: 1%;
-    border: none;
-    border-radius: 2vh;
-    background: var(--color-red);
-    color: white;
-    font-size: var(--font-size-button);
-    cursor: pointer;
+.delete-btn:disabled{
+
+    background:var(--color-disabled);
+
+    cursor:not-allowed;
+
 }
 
-.delete-btn:hover {
-    background: var(--color-red-hover);
+/* =====================================
+   ОТЧЕТ
+===================================== */
+
+#report{
+
+    height:var(--report-height);
+
+    flex-shrink:0;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    background:var(--color-white);
+
+    padding:var(--padding-medium);
+
+    border:var(--border-medium) solid var(--color-border);
+
+    border-radius:var(--radius-large);
+
+    scroll-behavior:smooth;
+
 }
 
-.delete-btn:disabled {
-    background: #cccccc;
-    cursor: not-allowed;
+.report-item{
+
+    padding:var(--padding-small);
+
+    font-size:var(--font-size-report);
+
+    line-height:1.3;
+
+    border-bottom:var(--border-thin) solid var(--color-border);
+
+    word-break:break-word;
+
 }
 
-#report {
-    background: white;
-    padding: 2%;
-    border-radius: 2vh;
-    height: 23vh;
-    overflow-y: auto;
-    scroll-behavior: smooth;
+.report-item{
+
+    padding:var(--padding-small);
+
+    font-size:var(--font-size-report);
+
+    line-height:1.3;
+
+    border-bottom:var(--border-thin) solid var(--color-border);
+
+    word-break:break-word;
+
 }
 
-.report-item {
-    padding: 2%;
-    min-height: 18px;
-    font-size: var(--font-size-report);
-    line-height: 10%;
-    border-bottom: 0.2vh solid #ddd;
+
+
+.report-item{
+
+    padding:var(--padding-small);
+
+    font-size:var(--font-size-report);
+
+    line-height:1.3;
+
+    border-bottom:var(--border-thin) solid var(--color-border);
+
+    word-break:break-word;
+
 }
 
-.buttons {
-    display: flex;
-    gap: 0.5vh;
-    margin-top: 0;
-}
-
-.buttons button {
-    flex: 1;
-    height: var(--btn-height-report);
-    padding: 2%;
-    border: none;
-    border-radius: 2vh;
-    font-size: var(--font-size-report);
-}
-
-.clear {
-    background: var(--color-red);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.modal-box {
-    background: white;
-    margin: %;
-    padding: 5% ;
-    width: 85%;
-    box-sizing: border-box;
-    border-radius: 3vh;
-}
-
-textarea {
-    width: 100%;
-    height: 150px;
-    font-size: var(--font-size-modal);
-    margin-bottom: 5%;
-}
-
-.modal-box button {
-    width: 100%;
-    padding: 0;
-    font-size: var(--font-size-modal);
-    margin-top: 5%;
-    border-radius: 2vh;
-    border: none;
-}
-
-button {
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-}
