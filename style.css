@@ -11,7 +11,36 @@ body{
 
 }
 
+.selected{
 
+background:#cfe7ff;
+
+}
+Увеличить кнопки
+
+.comment-btn,
+.delete-btn{
+
+height:7vh;
+
+font-size:1.2rem;
+
+margin-top:2vh;
+
+}
+
+Кнопки внизу
+
+
+.buttons button{
+
+height:7vh;
+
+font-size:1.15rem;
+
+}
+
+.comment-btn{ margin-top:2vh; }
 
 
 .container{
@@ -35,10 +64,23 @@ body{
 }
 
 
+Высота списка каналов
+
+.channel-list{
+
+height:34vh;
+
+}
+
+Высота отчета
+
+#report{
+
+height:40vh;
+
+}
 
 
-
-ю
 
 h1{
 
