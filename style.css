@@ -27,7 +27,7 @@ background:#cfe7ff;
 
 .buttons button{
 
-height:7vh;
+height:10vh;
 
 font-size:1.15rem;
 
@@ -63,9 +63,9 @@ h1{
 
     text-align:center;
 
-    font-size:22px;
+    font-size:3%;
 
-    margin:5px 0;
+    margin:2%;
 
 }
 
@@ -112,7 +112,7 @@ h2 {
 
     width:100%;
 
-    height:7%;
+    height:10%;
     min-height: 30px; 
 
     padding:1%;
@@ -133,7 +133,7 @@ h2 {
 
 .comment-btn {
     width: 100%;
-    height: 6%;
+    height: 10%;
     padding: 1%;
     border: none;
     border-radius: 2%;
@@ -149,7 +149,7 @@ h2 {
 
 .delete-btn {
     width: 100%;
-    height: 6%;
+    height: 10%;
     padding: 1%;
     border: none;
     border-radius: 2%;
@@ -217,7 +217,7 @@ h2 {
 
 .buttons button {
     flex: 1;
-    height: 5vh;  /* ← 5% от высоты экрана */
+    height: 10vh;  /* ← 5% от высоты экрана */
     padding: 1%;
     border: none;
     border-radius: 2%;
