@@ -1,14 +1,14 @@
 :root {
     /* Размеры шрифтов - В vh */
-    --font-size-small: 1.2vh;
-    --font-size-medium: 1.6vh;
-    --font-size-large: 2vh;
-    --font-size-xl: 2.4vh;
+    --font-size-small: 6vh;
+    --font-size-medium: 6vh;
+    --font-size-large: 6vh;
+    --font-size-xl: 6vh;
     
     /* Высоты кнопок */
-    --btn-height-small: 3vh;
-    --btn-height-medium: 4vh;
-    --btn-height-large: 5vh;
+    --btn-height-small: 6vh;
+    --btn-height-medium: 6vh;
+    --btn-height-large: 6vh;
     
     /* Отступы */
     --padding-small: 0.5vh;
