@@ -159,7 +159,7 @@ h2{
 
 .channel-list{
 
-    flex:1;
+    height: 45vh;
 
     min-height:0;
 
