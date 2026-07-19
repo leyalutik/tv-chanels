@@ -50,7 +50,7 @@ font-size:1.15rem;
 
     flex-direction:column;
 
-    gap:8px;
+    gap:4px;
 
 }
 
@@ -93,7 +93,7 @@ h1{
 
 .channel-list{
 
-    height:43vh;
+    height:50vh;
 
     overflow-y:auto;
 
@@ -113,15 +113,16 @@ h1{
 
     width:100%;
 
-    height:43px;
+    height:6%;
+    min-height: 30px; 
 
-    padding:5px;
+    padding:1%;
 
-    margin-bottom:5px;
+    margin-bottom:1%;
 
-    font-size:16px;
+    font-size:2.2%;
 
-    border-radius:8px;
+    border-radius:1.5%;
 
     border:1px solid #ccc;
 
@@ -132,57 +133,40 @@ h1{
 
 
 
-
-.comment-btn{
-
-    height:7vh;
-
-font-size:1.2rem;
-
-margin-top:2vh;
-    
-    width:100%;
-
-    
-
-   
-
-  
-
-    border-radius:10px;
-
-    border:none;
-
-    background:#ddd;
-
+.comment-btn {
+    width: 100%;
+    padding: 2%;           /* ← 10px → 2% */
+    border: none;
+    border-radius: 2%;     /* ← 10px → 2% */
+    background: #4CAF50;
+    color: white;
+    font-size: 2.5%;       /* ← 17px → 2.5% */
+    cursor: pointer;
 }
 
-
-.delete-btn{
-
-height:7vh;
-
-font-size:1.2rem;
-
-margin-top:2vh;
-
-     width:100%;
-
-    
-
-  
-
-
-
-    border-radius:10px;
-
-    border:none;
-
-    background:#ddd;
-
+.comment-btn:hover {
+    background: #45a049;
 }
 
+.delete-btn {
+    width: 100%;
+    padding: 2%;           /* ← 10px → 2% */
+    border: none;
+    border-radius: 2%;     /* ← 10px → 2% */
+    background: #ff7777;
+    color: white;
+    font-size: 2.5%;       /* ← 17px → 2.5% */
+    cursor: pointer;
+}
 
+.delete-btn:hover {
+    background: #ff5555;
+}
+
+.delete-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
 
 
 
