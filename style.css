@@ -72,7 +72,7 @@ h2 {
 
 .channel-list button {
     width: 100%;
-    height: 8vh;
+    height: var(--btn-height-medium);
     min-height: 30px;
     padding: var(--padding-small) var(--padding-small) var(--padding-small) 4vh;
     margin-bottom: 1vh;
@@ -85,7 +85,7 @@ h2 {
 
 .comment-btn {
     width: 100%;
-    height: 7vh;
+    height: var(--btn-height-medium);
     padding: var(--padding-small);
     border: none;
     border-radius: 2vh;
@@ -101,7 +101,7 @@ h2 {
 
 .delete-btn {
     width: 100%;
-    height: 7vh;
+    height: var(--btn-height-medium);
     padding: var(--padding-small);
     border: none;
     border-radius: 2vh;
@@ -145,7 +145,7 @@ h2 {
 
 .buttons button {
     flex: 1;
-    height: 7vh;
+    height: var(--btn-height-medium);
     padding: var(--padding-small);
     border: none;
     border-radius: 2vh;
