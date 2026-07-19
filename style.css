@@ -135,7 +135,7 @@ h2 {
 .report-item {
     padding: 2%;
     min-height: 18px;
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-report);
     line-height: 10%;
     border-bottom: 0.2vh solid #ddd;
 }
@@ -148,11 +148,11 @@ h2 {
 
 .buttons button {
     flex: 1;
-    height: var(--btn-height-button);
+    height: var(--btn-height-report);
     padding: 2%;
     border: none;
     border-radius: 2vh;
-    font-size: var(--font-size-button);
+    font-size: var(--font-size-report);
 }
 
 .clear {
