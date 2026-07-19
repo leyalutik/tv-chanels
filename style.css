@@ -16,30 +16,11 @@ body{
 background:#cfe7ff;
 
 }
-Увеличить кнопки
-
-.comment-btn
-{
-
-height:7vh;
-
-font-size:1.2rem;
-
-margin-top:2vh;
-
-}
 
 
 
-.delete-btn{
 
-height:7vh;
 
-font-size:1.2rem;
-
-margin-top:2vh;
-
-}
 
 Кнопки внизу
 
@@ -160,9 +141,15 @@ h1{
 
 .comment-btn{
 
+    height:7vh;
+
+font-size:1.2rem;
+
+margin-top:2vh;
+    
     width:100%;
 
-    height:44px;
+    
 
     font-size:17px;
 
@@ -177,6 +164,29 @@ h1{
 }
 
 
+.delete-btn{
+
+height:7vh;
+
+font-size:1.2rem;
+
+margin-top:2vh;
+
+     width:100%;
+
+    
+
+    font-size:17px;
+
+    margin:8px 0;
+
+    border-radius:10px;
+
+    border:none;
+
+    background:#ddd;
+
+}
 
 
 
