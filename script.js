@@ -141,7 +141,7 @@ data.date = now.toLocaleDateString("ru-RU");
 
 
 
-
+/*
 
 function addComment(){
 
@@ -149,16 +149,19 @@ function addComment(){
     document.getElementById(
         "commentModal"
     ).style.display = "block";
-
-
-
-
-
 }
 
+*/
 
+function addComment(){
 
+    alert("Функция работает");
 
+    document.getElementById(
+        "commentModal"
+    ).style.display = "block";
+
+}
 
 
 
