@@ -13,7 +13,7 @@ let data = JSON.parse(
 
 
 function load(){
-    alert("Версия программы: 1");
+    alert("Версия программы: " + VERSION);
 
     
     createButtons();
