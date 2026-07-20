@@ -117,9 +117,9 @@ body{
     width:100%;
     max-width:var(--container-width);
 
-    height:100vh;
+    height:calc(100vh - 8vh);
 
-    margin:0 auto;
+    margin:4vh auto;
 
     padding:var(--padding-small);
 
