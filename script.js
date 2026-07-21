@@ -147,7 +147,7 @@ data.date = now.toLocaleDateString("ru-RU");
 
 function addComment(){
 
-    alert("Функция работает");
+    
 
     let modal =
         document.getElementById("commentModal");
@@ -155,7 +155,7 @@ function addComment(){
     document.getElementById(
         "commentModal"
     ).style.display = "flex";
-    alert(modal.style.display);
+    
 
 }
 
