@@ -438,7 +438,17 @@ function editSelected(){
     ).value=
     data.items[selectedIndex].text;
 
+document.getElementById(
+        "emptyLineBtn"
+    ).style.display = "none";
+
     closeDeleteModal();
+
+    document.getElementById(
+        "commentModal"
+    ).style.display = "flex";
+
+
 
     addComment();
 
