@@ -151,7 +151,10 @@ function addComment(){
 
     let modal =
         document.getElementById("commentModal");
-
+document.getElementById(
+        "commentText"
+    ).value = "";
+    
     document.getElementById(
         "commentModal"
     ).style.display = "flex";
