@@ -161,7 +161,7 @@ function addComment(){
 
     document.getElementById(
         "commentModal"
-    ).style.display = "block";
+    ).style.display = "flex";
 
 }
 
