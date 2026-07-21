@@ -147,10 +147,15 @@ data.date = now.toLocaleDateString("ru-RU");
 
 function addComment(){
 
+    alert("Функция работает");
 
-    document.getElementById(
-        "commentModal"
-    ).style.display = "block";
+    let modal =
+        document.getElementById("commentModal");
+
+    modal.style.display = "block";
+
+    alert(modal.style.display);
+
 }
 
 */
