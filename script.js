@@ -449,9 +449,6 @@ document.getElementById(
     ).style.display = "flex";
 
 
-
-    addComment();
-
 }
 
 
