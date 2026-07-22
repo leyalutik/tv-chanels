@@ -389,7 +389,7 @@ function showDeleteDialog(){
 
     document.getElementById(
     "deleteModal"
-    ).style.display="block";
+    ).style.display="flex";
 
 }
 
