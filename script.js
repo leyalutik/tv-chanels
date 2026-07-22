@@ -309,12 +309,21 @@ function deleteSelected() {
 // ============================================
 
 function copyReport() {
-    let text = data.items.forEach(item => {
+
+    let text = "";
+
+    data.items.forEach(item => {
         text += item.text + "\n";
     });
 
-    navigator.clipboard.writeText(text);
-    alert("Отчет скопирован");
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("Отчёт скопирован.");
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Не удалось скопировать отчёт.");
+        });
 }
 
 // ============================================
