@@ -310,14 +310,7 @@ function deleteSelected() {
 
 function copyReport() {
     let text =
-        `
-Отчёт по ТВ
-Дата:
-${data.date}
-Время:
-${data.time}
-
-`;
+        
 
     data.items.forEach(item => {
         text += item.text + "\n";
