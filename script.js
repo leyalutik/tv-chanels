@@ -309,10 +309,7 @@ function deleteSelected() {
 // ============================================
 
 function copyReport() {
-    let text =
-        
-
-    data.items.forEach(item => {
+    let text = data.items.forEach(item => {
         text += item.text + "\n";
     });
 
