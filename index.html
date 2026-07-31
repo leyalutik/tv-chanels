@@ -101,7 +101,7 @@ placeholder="Введите текст">
 </textarea>
 
 
-<button onclick="saveComment()">
+<button class="save-btn"   onclick="saveComment()">
 Подтвердить
 </button>
 
@@ -111,8 +111,11 @@ placeholder="Введите текст">
 Добавить пустую строку
 </button>
 
+<button onclick="showTemplateModal()">
+Шаблоны
+</button>
 
-<button onclick="closeModal()">
+<button class="otmena-btn"    onclick="closeModal()">
 
 Отмена
 
@@ -151,7 +154,35 @@ placeholder="Введите текст">
     </div>
 
 </div>
+<div id="templateModal" class="modal" style="display:none;">
 
+    <div class="modal-box">
+
+        <h3>Шаблоны</h3>
+
+        <button onclick="selectTemplate('ОК')">
+            ОК
+        </button>
+
+        <button onclick="selectTemplate('Нет информации')">
+            Нет информации
+        </button>
+
+        <button onclick="selectTemplate('Данная служба недоступна')">
+            Данная служба недоступна
+        </button>
+
+        <button onclick="selectTemplate('Артефакты')">
+            Артефакты
+        </button>
+
+        <button onclick="closeTemplateModal()">
+            Отмена
+        </button>
+
+    </div>
+
+</div>
 <script src="channels.js"></script>
 <script src="version.js"></script>
 <script src="script.js"></script>
