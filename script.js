@@ -264,7 +264,7 @@ function editSelected() {
     // 5. Меняем текст и поведение кнопки "Сохранить"
     let saveBtn = document.querySelector('#commentModal button[onclick="saveComment()"]');
     if (saveBtn) {
-        saveBtn.textContent = '💾 Сохранить изменения';
+        saveBtn.textContent = 'Подтвердить';
         saveBtn.onclick = function() {
             saveEditedComment();
         };
