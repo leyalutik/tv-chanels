@@ -179,6 +179,40 @@ function showReport() {
 }
 
 // ============================================
+// ОТКРЫТЬ ОКНО ШАБЛОНОВ
+// ============================================
+
+function showTemplateModal() {
+
+    document.getElementById("templateModal").style.display = "flex";
+
+}
+
+// ============================================
+// ЗАКРЫТЬ ОКНО ШАБЛОНОВ
+// ============================================
+
+function closeTemplateModal() {
+
+    document.getElementById("templateModal").style.display = "none";
+
+}
+
+// ============================================
+// ВЫБОР ШАБЛОНА
+// ============================================
+
+function selectTemplate(text) {
+
+    document.getElementById("commentText").value = text;
+
+    closeTemplateModal();
+
+}
+
+
+
+// ============================================
 // ПОКАЗАТЬ ДИАЛОГ УДАЛЕНИЯ
 // ============================================
 
@@ -279,7 +313,7 @@ function resetCommentModal() {
 
     if (title) title.textContent = 'Текст';
     if (saveBtn) {
-        saveBtn.textContent = 'Добавить текст';
+        saveBtn.textContent = 'Подтвердить';
         saveBtn.onclick = saveComment;
     }
 }
