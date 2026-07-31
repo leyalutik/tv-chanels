@@ -213,8 +213,9 @@ h2{
 ===================================== */
 
 .comment-btn,
-.delete-btn{
-
+.delete-btn,
+.otmena-btn,
+.save-btn{
     width:100%;
 
     height:var(--btn-height-button);
@@ -233,9 +234,20 @@ h2{
 
 }
 
+.save-btn{
+
+background:#E0F7F0;
+
+}
+.otmena-btn{
+
+	background:#FDE8E8;
+
+}
+
 .comment-btn{
 
-    background:var(--color-gray);
+    background:#bfbfbf;
 
     color:#000;
 
@@ -395,5 +407,4 @@ textarea{
     cursor:pointer;
 
 }
-
 
